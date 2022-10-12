@@ -2,8 +2,8 @@ git remote add target https://${INPUT_TARGET_USERNAME}:${INPUT_TARGET_TOKEN}@${I
 
 case "${GITHUB_EVENT_NAME}" in
     push)
-        git push -f --all target
-        git push -f --tags target
+        git push --all target
+        git push --tags target
         ;;
     delete)
         git push -d target ${GITHUB_EVENT_REF}
