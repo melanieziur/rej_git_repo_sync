@@ -2,13 +2,8 @@ git remote add target https://${INPUT_TARGET_USERNAME}:${INPUT_TARGET_TOKEN}@${I
 
 case "${GITHUB_EVENT_NAME}" in 
 workflow_dispatch)
-        ;;
-    push)
         git push --all target
         git push --tags target
-        ;;
-    delete)
-        git push -d target ${GITHUB_EVENT_REF}
         ;;
     *)
         break
